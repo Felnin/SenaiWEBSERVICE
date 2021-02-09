@@ -5,13 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import models.Livro;
-import models.User;
+import model.Livro;
 
 public class LivroDAO {
 
     public static boolean inserirLivroBanco(Livro livro) {
-        String sql = "INSERT INTO livros (nome, quantidade, areaLivro, resumo, anoPublicacao, edicao) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO livros (id, quantidade, nome, area, resumo, anoPublicacao, edicao) VALUES (?,?,?,?,?,?,?)";
 
         Connection conexao = ConexaoBanco.CriaConexao();
 
@@ -19,7 +18,7 @@ public class LivroDAO {
             PreparedStatement stm = conexao.prepareStatement(sql);
             stm.setString(1, livro.getNome());
             stm.setInt(2, livro.getQuantidade());
-            stm.setInt(3, livro.getAreaLivro());
+            stm.setString(3, livro.getArea());
             stm.setString(4, livro.getResumo());
             stm.setInt(5, livro.getAnoPublicacao());
             stm.setInt(6, livro.getEdicao());
@@ -52,7 +51,7 @@ public class LivroDAO {
                 int anoPublicacao = retornoBanco.getInt("anoPublicacao");
                 int edicao = retornoBanco.getInt("edicao");
 
-                Livro livro = new Livro(quantidade, nome, areaLivro, resumo, anoPublicacao, edicao);
+                Livro livro = new Livro(id, quantidade, nome, nome, resumo, anoPublicacao, edicao);
 
                 listaLivros.add(livro);
 
@@ -83,7 +82,7 @@ public class LivroDAO {
                 String resumo = retornoBanco.getString("resumo");
                 int anoPublicacao = retornoBanco.getInt("anoPublicacao");
                 int edicao = retornoBanco.getInt("edicao");
-                Livro livro = new Livro(quantidade, nome, areaLivro, resumo, anoPublicacao, edicao);
+                Livro livro = new Livro(id, quantidade, nome, nome, resumo, anoPublicacao, edicao);
 
                 return livro;
             } else {
@@ -123,7 +122,7 @@ public class LivroDAO {
             PreparedStatement stm = conexao.prepareStatement(sql);
             stm.setString(1, livro.getNome());
             stm.setInt(2, livro.getQuantidade());
-            stm.setInt(3, livro.getAreaLivro());
+            stm.setString(3, livro.getArea());
             stm.setString(4, livro.getResumo());
             stm.setInt(5, livro.getAnoPublicacao());
             stm.setInt(6, livro.getEdicao());

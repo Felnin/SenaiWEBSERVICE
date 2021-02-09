@@ -8,7 +8,8 @@ public class Usuario {
     private String cpf;
     private int idade;
     private String endereco;
-
+    private String telefone;
+    
     public Usuario(int id, String nome, String cpf, int idade, String endereco, String telefone) {
         this.id = id;
         this.nome = nome;
@@ -17,7 +18,7 @@ public class Usuario {
         this.endereco = endereco;
         this.telefone = telefone;
     }
-    private String telefone;
+    
 
     public int getId() {
         return id;

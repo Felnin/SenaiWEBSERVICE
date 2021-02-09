@@ -42,6 +42,16 @@ public class Livro {
         this.area = area;
     }
 
+    public Livro(int id, int quantidade, String nome, String area, String resumo, int anoPublicacao, int edicao) {
+        this.id = id;
+        this.quantidade = quantidade;
+        this.nome = nome;
+        this.area = area;
+        this.resumo = resumo;
+        this.anoPublicacao = anoPublicacao;
+        this.edicao = edicao;
+    }
+
     public String getResumo() {
         return resumo;
     }

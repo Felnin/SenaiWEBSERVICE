@@ -1,18 +1,16 @@
 package model;
 
 public class Emprestimo {
+    
+    private int id;
+    private int idUsuario;
+    private String dataInicio;
+    private String dataFim;
+    private int multa;
+    private boolean ativo;
 
     public int getId() {
         return id;
-    }
-
-    public Emprestimo(int id, int idUsuario, String dataInicio, String dataFim, int multa, boolean ativo) {
-        this.id = id;
-        this.idUsuario = idUsuario;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
-        this.multa = multa;
-        this.ativo = ativo;
     }
 
     public void setId(int id) {
@@ -55,14 +53,17 @@ public class Emprestimo {
         return ativo;
     }
 
+    public Emprestimo(int id, int idUsuario, String dataInicio, String dataFim, int multa, boolean ativo) {
+        this.id = id;
+        this.idUsuario = idUsuario;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.multa = multa;
+        this.ativo = ativo;
+    }
+
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
-    private int id;
-    private int idUsuario;
-    private String dataInicio;
-    private String dataFim;
-    private int multa;
-    private boolean ativo;
 
 }
